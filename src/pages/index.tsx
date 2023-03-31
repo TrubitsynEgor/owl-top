@@ -1,17 +1,21 @@
 
-import { Button, Htag, P, Tag } from '@/components'
+import { Button, Htag, P, Rating, Tag } from '@/components'
 import { Inter } from 'next/font/google'
+import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+  const [rating, setRating] = useState(4)
+
+
   return (
 
     <div>
 
-      <Htag tag='h1'>Text</Htag>
-      <Button appearance='primary' arrow='right'>Click</Button>
+      <Htag tag='h1'>Test</Htag>
+      <Button appearance='primary' arrow='right' >Click</Button>
       <Button appearance='ghost' arrow='right'>Click</Button>
       <P size='small'>Это мой кастомный параграф</P>
       <P >Это мой кастомный параграф</P>
@@ -31,6 +35,8 @@ export default function Home() {
 
       <Tag size='small' color='gray' >маленький и gray</Tag>
       <Tag color='gray' >средний и gray</Tag>
+
+      <Rating rating={rating} isEditable={true} setRating={setRating} />
 
     </div>
   )

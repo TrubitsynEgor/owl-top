@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import cl from 'classnames'
+import cn from 'classnames'
 import styles from './P.module.scss'
 
 interface PProps {
@@ -10,7 +10,7 @@ interface PProps {
 
 export const P = ({ children, size = 'medium', className }: PProps) => {
 	return (
-		<p className={cl(styles.P, className, {
+		<p className={cn(styles.P, className, {
 			[styles.small]: size === 'small',
 			[styles.large]: size === 'large'
 		})}>

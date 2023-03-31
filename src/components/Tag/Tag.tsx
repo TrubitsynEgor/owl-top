@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import cl from 'classnames'
+import cn from 'classnames'
 import styles from './Tag.module.scss'
 import Link from 'next/link'
 
@@ -14,7 +14,7 @@ interface PProps {
 
 export const Tag = ({ children, size = 'medium', color = 'ghost', href, className }: PProps) => {
 	return (
-		<div className={cl(styles.Tag, className, {
+		<div className={cn(styles.Tag, className, {
 			[styles.small]: size === 'small',
 			[styles.medium]: size === 'medium',
 			[styles.ghost]: color === 'ghost',
