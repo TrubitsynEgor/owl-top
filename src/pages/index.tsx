@@ -24,7 +24,6 @@ function Home({ menu }: HomeProps) {
       </Head>
 
       <div>
-
         <Htag tag='h1'>Test</Htag>
         <Button appearance='primary' arrow='right' >Click</Button>
         <Button appearance='ghost' arrow='right'>Click</Button>
