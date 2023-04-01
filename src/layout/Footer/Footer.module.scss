@@ -1,1 +1,44 @@
-.footer {}
+.footer {
+	padding: 27px 32px;
+	min-height: 72px;
+
+	font-weight: 500;
+	font-size: 16px;
+	color: var(--light);
+
+	& .wrapper {
+		display: grid;
+		grid-template-columns: 1fr auto auto;
+		gap: 40px;
+		align-items: center;
+
+		@media (max-width: 1010px) {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 20px;
+			place-items: center;
+
+
+		}
+	}
+
+
+
+
+
+	& .agreement {
+		transition: all .3s ease-in-out;
+
+		&:hover {
+			color: rgba(#fff, 0.5);
+		}
+	}
+
+	& .politics {
+		transition: all .3s ease-in-out;
+
+		&:hover {
+			color: rgba(#fff, 0.5);
+		}
+	}
+}
