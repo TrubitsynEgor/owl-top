@@ -30,6 +30,7 @@ export const Rating = ({ className, isEditable = false, rating, setRating }: Rat
 				})}
 					onMouseEnter={() => changeDisplay(i + 1)}
 					onMouseLeave={() => changeDisplay(rating)}
+					onMouseDown={(e) => e.preventDefault()}
 					onClick={() => onClick(i + 1)}>
 					<StarIcon
 

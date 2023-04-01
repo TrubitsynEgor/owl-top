@@ -1,1 +1,62 @@
-.menu {}
+.menu {
+	& .firstLevel {
+		margin-top: 20px;
+		display: grid;
+		grid-template-columns: 24px 1fr;
+		gap: 20px;
+		align-items: center;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+
+		&:hover,
+		&Active {
+			color: var(--primary);
+
+			& svg {
+				fill: var(--primary);
+			}
+		}
+	}
+
+	& .secondBlock {
+		margin-left: 12px;
+		padding-left: 32px;
+		margin-top: 22px;
+		margin-bottom: 29px;
+
+		border-left: 1px solid #dfdfdf;
+
+	}
+
+	& .secondLevel {
+		margin-bottom: 10px;
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 16px;
+		color: var(--gray-dark);
+		cursor: pointer;
+		text-transform: uppercase;
+
+		&BlockOpened {
+			margin-bottom: 20px;
+
+		}
+
+	}
+
+	& .thirdLevel {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 19px;
+		color: var(--gray-dark);
+		display: block;
+		margin-bottom: 10px;
+		transition: all .2s ease-in-out;
+
+		&:hover,
+		&Active {
+			color: var(--primary);
+		}
+	}
+}
