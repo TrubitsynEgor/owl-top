@@ -1,5 +1,5 @@
 import { HtagProps } from './Htag.props'
-import styles from './Htag.module.css'
+import styles from './Htag.module.scss'
 
 
 export const Htag = ({ children, tag }: HtagProps) => {

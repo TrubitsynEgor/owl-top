@@ -1,0 +1,114 @@
+.hh {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 30px;
+	margin-bottom: 47px;
+
+	@media (max-width: 1200px) {
+		grid-template-columns: 1fr;
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+		place-items: center;
+	}
+
+	.title {
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 27px;
+		color: var(--dark);
+	}
+
+	.count {
+		padding: 10px;
+		width: 260px;
+		height: 140px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&Value {
+			font-weight: 700;
+			font-size: 36px;
+			line-height: 49px;
+			color: var(--primary);
+		}
+	}
+
+	.salary {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+
+		@media (max-width: 768px) {
+			display: flex;
+			flex-direction: column;
+			width: 260px;
+
+		}
+
+		&Item {
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			position: relative;
+
+			@media (max-width: 768px) {
+				margin-bottom: 20px;
+			}
+
+
+
+			&:not(:last-child):after {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 57%;
+				transform: translateY(-50%);
+				background-color: var(--gray-light);
+				width: 1px;
+				height: 98px;
+
+				@media (max-width: 768px) {
+					display: none;
+				}
+
+			}
+
+			@media (max-width: 768px) {
+				&:not(:last-child)::before {
+					content: '';
+					position: absolute;
+					bottom: -15px;
+					left: 50%;
+					transform: translateX(-50%);
+					background-color: var(--gray-light);
+					height: 1px;
+					width: 98px;
+				}
+
+			}
+		}
+
+		&Value {
+			font-weight: 700;
+			font-size: 26px;
+			line-height: 35px;
+			color: var(--dark);
+
+		}
+
+		.rate {
+			display: flex;
+			gap: 10px;
+		}
+
+		.filled circle {
+			fill: var(--red);
+		}
+	}
+}

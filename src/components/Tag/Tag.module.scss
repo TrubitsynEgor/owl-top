@@ -1,5 +1,8 @@
 .Tag {
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	margin-right: 5px;
 	border-radius: 20px;
 
@@ -12,7 +15,6 @@
 	&.medium {
 		padding: 5px 10px;
 		font-size: 14px;
-		line-height: 14px;
 	}
 
 	&.ghost {

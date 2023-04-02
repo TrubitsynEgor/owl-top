@@ -3,7 +3,6 @@ export enum TopLevelCategory {
 	Services,
 	Books,
 	Products
-
 }
 
 export interface TopPageAdvantage {
@@ -12,7 +11,7 @@ export interface TopPageAdvantage {
 	description: string
 }
 
-export interface HhData {
+export interface IHhData {
 	_id: string
 	count: number
 	juniorSalary: number
@@ -35,5 +34,5 @@ export interface TopPageModel {
 	advantages: TopPageAdvantage[]
 	createdAt: Date
 	updatedAt: Date
-	hh: HhData
+	hh: IHhData
 }
