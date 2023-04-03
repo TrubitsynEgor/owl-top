@@ -5,6 +5,11 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  &:focus {
+
+    border-radius: 5px;
+  }
 }
 
 html,
@@ -25,6 +30,7 @@ a {
 }
 
 :root {
+  //================= colors:
   --dark: #3b434e;
   --light: #ffffff;
   --blue-light: #F9F8FF;
@@ -37,5 +43,8 @@ a {
   --red: #fc836d;
   --green: #1dc47e;
   --green-light: #c8f8e4;
-  ;
+
+
+  //================= Fonts:
+  --noto-sans: 'Noto Sans', sans-serif;
 }

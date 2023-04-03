@@ -1,6 +1,6 @@
 .input {
 	border: none;
-
+	font-family: var(--noto-sans);
 	padding-left: 15px;
 	color: var(--dark);
 	font-size: 16px;
@@ -26,8 +26,9 @@
 
 .iconWrapper {
 	position: absolute;
+	border: none;
 	right: 3px;
-	top: 55%;
+	top: 50%;
 	transform: translateY(-50%);
 	background-color: var(--primary);
 	border-radius: 5px;
@@ -36,7 +37,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
+	cursor: pointer;
 }
 
 .icon {}

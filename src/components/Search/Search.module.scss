@@ -1,0 +1,13 @@
+.search {
+	position: relative;
+
+	.btn {
+		position: absolute;
+		right: 3px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 30px;
+		height: 30px;
+		padding: 7px;
+	}
+}

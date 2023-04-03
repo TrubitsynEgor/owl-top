@@ -17,20 +17,20 @@ export enum SortEnum {
 const Sort = ({ sort, setSort, className, ...props }: SortProps) => {
 	return (
 		<div className={classNames(styles.sort, className)}  {...props}>
-			<span onClick={() => setSort(SortEnum.Rating)}
+			<button tabIndex={1} onClick={() => setSort(SortEnum.Rating)}
 				className={classNames({
 					[styles.active]: sort === SortEnum.Rating
 				})}
 			>
 				<SortIcon className={styles.icon} />По рейтингу
-			</span>
-			<span onClick={() => setSort(SortEnum.Price)}
+			</button>
+			<button onClick={() => setSort(SortEnum.Price)}
 				className={classNames({
 					[styles.active]: sort === SortEnum.Price
 				})}
 			>
 				<SortIcon className={styles.icon} />По цене
-			</span>
+			</button>
 		</div >
 	)
 }

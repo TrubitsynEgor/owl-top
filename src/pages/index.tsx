@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import { Button, Htag, Input, P, Rating, Tag } from '@/components'
+import { Button, Htag, Input, P, Rating, Tag, TextArea } from '@/components'
 import { withLayout } from '@/layout/Layout'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
@@ -48,7 +48,7 @@ function Home({ menu }: HomeProps) {
 
         <Rating rating={rating} isEditable={true} setRating={setRating} />
 
-
+        <TextArea placeholder='Текст отзыва' />
 
       </div>
     </>

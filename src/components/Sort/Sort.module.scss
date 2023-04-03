@@ -11,10 +11,14 @@
 
 
 
-	& span {
+	& button {
+		font-family: var(--noto-sans);
+		background-color: transparent;
+		border: none;
 		display: flex;
 		align-items: center;
 		cursor: pointer;
+		font-size: 16px;
 	}
 
 	.icon {
