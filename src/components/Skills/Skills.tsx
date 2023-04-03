@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import styles from './Skills.module.scss'
-import { Htag } from '../Htag/Htag'
-import { Tag } from '../Tag/Tag'
+import { Htag } from '../UI/Htag/Htag'
+import { Tag } from '../UI/Tag/Tag'
 
 interface SkillsProps {
 	className?: string

@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
 import styles from './Search.module.scss'
 import SearchIcon from './search.svg'
-import { Input } from '../Input/Input'
+import { Input } from '../UI/Input/Input'
 import { Button } from '../UI/Button/Button'
 import { useRouter } from 'next/router'
 

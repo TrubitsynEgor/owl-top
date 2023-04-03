@@ -1,5 +1,5 @@
 import styles from './HhData.module.scss'
-import { Card } from '../Card/Card'
+import { Card } from '../UI/Card/Card'
 import { IHhData } from '@/interfaces/page.interface'
 import RateIcon from './rate-star.svg'
 import { priceRu } from '@/helpers/helpers'

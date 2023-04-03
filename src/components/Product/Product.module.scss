@@ -1,0 +1,153 @@
+.product {
+	padding: 30px;
+	margin-bottom: 51px;
+
+	hr {
+		margin: 20px 0;
+		border: 1px solid var(--gray-light);
+	}
+
+	.actions {
+		display: flex;
+		gap: 20px;
+	}
+}
+
+
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.right {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+
+		.img {
+			border-radius: 5px;
+		}
+
+		.title {
+			padding-bottom: 10px;
+		}
+
+		.tags {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	.left {
+		display: flex;
+		gap: 40px;
+		align-items: center;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 27px;
+
+		.price {
+			display: grid;
+			grid-template-columns: auto auto;
+			align-items: center;
+
+
+			.tag {
+				margin-left: 10px;
+			}
+		}
+
+		.credit {
+			.suffix {
+				font-size: 14px;
+				font-weight: 300;
+			}
+		}
+
+		.info {
+			display: block;
+			color: #3B434E;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 19px;
+		}
+	}
+}
+
+.benefits {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 60px;
+	margin-top: 15px;
+
+	.advantagesWrapper {
+
+		.advantages {
+			position: relative;
+			margin-bottom: 20px;
+			padding-left: 20px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: var(--green);
+				width: 3px;
+				height: 100%;
+
+			}
+		}
+
+		.disadvantages {
+			position: relative;
+			padding-left: 20px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: var(--red);
+				width: 3px;
+				height: 100%;
+
+			}
+		}
+
+		& h4 {
+			font-size: 16px;
+			line-height: 22px;
+			padding-bottom: 10px;
+
+		}
+	}
+
+}
+
+.characteristic {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 10px;
+	align-items: center;
+
+	&Name {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 32px;
+	}
+
+	&Value {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	&Dots {
+		margin-top: 10px;
+		border-bottom: 1px dashed #C4C4C4;
+	}
+}

@@ -5,6 +5,7 @@ import styles from './TopPageComponent.module.scss'
 import Sort, { SortEnum } from '@/components/Sort/Sort'
 import { useReducer } from 'react'
 import { sortReducer } from './sort.reducer'
+import Product from '@/components/Product/Product'
 
 
 
@@ -34,7 +35,7 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
 				<Sort sort={sort} setSort={setSort} />
 			</div>
 
-			{sortProducts && sortProducts.map(p => (<div key={p._id}>{p.title}</div>))}
+			{sortProducts && sortProducts.map(p => (<Product product={p} key={p._id} />))}
 
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>

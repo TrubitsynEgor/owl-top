@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
 import cn from 'classnames'
 import styles from './Benefit.module.scss'
-import { Htag } from '../Htag/Htag'
+import { Htag } from '../UI/Htag/Htag'
 import BenefitIcon from './benefit.svg'
-import { P } from '../P/P'
+import { P } from '../UI/P/P'
 import { TopPageAdvantage } from '@/interfaces/page.interface'
 
 interface BenefitProps {
