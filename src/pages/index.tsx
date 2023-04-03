@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import { Button, Htag, P, Rating, Tag } from '@/components'
+import { Button, Htag, Input, P, Rating, Tag } from '@/components'
 import { withLayout } from '@/layout/Layout'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
@@ -47,6 +47,8 @@ function Home({ menu }: HomeProps) {
         <Tag color='gray' >средний и gray</Tag>
 
         <Rating rating={rating} isEditable={true} setRating={setRating} />
+
+
 
       </div>
     </>

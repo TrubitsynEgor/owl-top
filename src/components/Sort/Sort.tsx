@@ -2,6 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import SortIcon from './sort.svg'
 import classNames from 'classnames'
 import styles from './Sort.module.scss'
+import { SortActions } from '@/page-components/TopPageComponent/sort.reducer'
 
 
 interface SortProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
