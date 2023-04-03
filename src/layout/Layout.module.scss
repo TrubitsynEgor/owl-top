@@ -7,7 +7,7 @@
 		'. header header .'
 		'. sidebar body .'
 		'footer footer footer footer';
-	gap: 0 30px;
+	gap: 40px 30px;
 
 	@media (max-width: 768px) {
 		grid-template-columns: minmax(320px, 1fr);
@@ -15,7 +15,10 @@
 			'header'
 			'body'
 			'footer';
+
 	}
+
+
 
 	& .header {
 		grid-area: header;

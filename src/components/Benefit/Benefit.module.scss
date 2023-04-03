@@ -1,0 +1,39 @@
+.benefit {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 40px;
+	align-items: center;
+	margin-bottom: 30px;
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.icon {
+		align-self: flex-start;
+	}
+
+	.title {
+		margin-top: 10px;
+		margin-bottom: 20px;
+
+	}
+
+	.description {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: -65px;
+			top: 5%;
+			background-color: #d2d2d2;
+			width: 1px;
+			height: 90%;
+
+		}
+	}
+
+}

@@ -1,10 +1,15 @@
 .footer {
 	padding: 27px 32px;
 	min-height: 72px;
-
 	font-weight: 500;
 	font-size: 16px;
 	color: var(--light);
+
+	@media (max-width: 410px) {
+		text-align: center;
+
+	}
+
 
 	& .wrapper {
 		display: grid;
@@ -19,6 +24,10 @@
 			place-items: center;
 
 
+		}
+
+		@media (max-width: 560px) {
+			gap: 10px;
 		}
 	}
 

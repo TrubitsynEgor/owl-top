@@ -1,5 +1,7 @@
 .wrapper {
-	margin-top: 40px;
+	@media (max-width: 768px) {
+		padding: 0 15px;
+	}
 
 }
 
@@ -22,4 +24,55 @@
 	justify-items: flex-start;
 	margin-bottom: 24px;
 
+}
+
+.benefits {
+	margin-bottom: 30px;
+
+	.title {
+		margin-bottom: 27px;
+
+	}
+}
+
+.seo {
+	& p {
+		margin-bottom: 10px;
+		font-size: 16px;
+		line-height: 24px;
+
+	}
+
+	& ul {
+		list-style: none;
+		padding-left: 30px;
+
+		& li {
+			padding-bottom: 10px;
+
+		}
+	}
+
+	& h1 {
+		font-weight: 500;
+		font-size: 26px;
+		line-height: 35px;
+		margin: 0;
+	}
+
+	& h2 {
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 30px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+
+	}
+
+	& h3 {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 27px;
+		margin: 0;
+	}
 }
