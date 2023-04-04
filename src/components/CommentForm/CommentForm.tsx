@@ -21,7 +21,7 @@ export interface ICommentForm {
 
 const CommentForm = ({ productId }: CommentFormProps) => {
 
-	const { register, control, handleSubmit, } = useForm<ICommentForm>()
+	const { register, control, handleSubmit, formState: { errors } } = useForm<ICommentForm>()
 
 
 	const onSubmit = (data: ICommentForm) => {
@@ -32,18 +32,24 @@ const CommentForm = ({ productId }: CommentFormProps) => {
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} action="#" className={styles.commentForm}>
 			<div className={styles.top}>
-				<Input {...register('name')} className={styles.input} placeholder='Имя' name='name' />
-				<Input {...register('title')} className={styles.input} placeholder='Заголовок отзыва' />
+				<Input {...register('name', { required: { value: true, message: 'Заполните Имя!' } })}
+					className={styles.input} placeholder='Имя' name='name' error={errors.name} />
+				<Input {...register('title', { required: { value: true, message: 'Заполните Заголовок!' } })}
+					className={styles.input} placeholder='Заголовок отзыва' error={errors.title} />
 
 				<span className={styles.rating}>Оценка:
-					<Controller control={control} name='rating' render={({ field }) => (
-						<Rating rating={field.value} ref={field.ref} isEditable setRating={field.onChange} />
-					)
-					} />
+					<Controller control={control} name='rating'
+						rules={({ required: { value: true, message: 'Заполните Имя!' } })}
+
+						render={({ field }) => (
+							<Rating rating={field.value} ref={field.ref} isEditable setRating={field.onChange} error={errors.rating} />
+						)
+						} />
 				</span>
 
 			</div>
-			<TextArea {...register('description')} placeholder='Текст отзыва' className={styles.textArea} />
+			<TextArea {...register('description', { required: { value: true, message: 'Заполните Заголовок!' } })}
+				placeholder='Текст отзыва' className={styles.textArea} error={errors.description} />
 			<div className={styles.bot}>
 				<Button appearance='primary' className={styles.btn}>Отправить</Button>
 				<span className={styles.caption}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>

@@ -2,17 +2,18 @@ import { ForwardedRef, KeyboardEvent, forwardRef, useEffect, useState } from 're
 import cn from 'classnames'
 import styles from './Rating.module.scss'
 import StarIcon from './star.svg'
-
+import { FieldError } from 'react-hook-form'
 
 interface RatingProps {
 	className?: string
 	isEditable?: boolean
 	rating: number
 	setRating?: (rating: number) => void
+	error?: FieldError
 
 }
 
-export const Rating = forwardRef(({ className, isEditable = false, rating, setRating }: RatingProps, ref: ForwardedRef<HTMLDivElement>) => {
+export const Rating = forwardRef(({ className, isEditable = false, rating, setRating, error }: RatingProps, ref: ForwardedRef<HTMLDivElement>) => {
 
 	const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>))
 
@@ -58,8 +59,11 @@ export const Rating = forwardRef(({ className, isEditable = false, rating, setRa
 		setRating(i)
 	}
 	return (
-		<div className={cn(styles.Rating, className,)}>
+		<div className={cn(styles.Rating, className, {
+			[styles.error]: error
+		})}>
 			{ratingArray.map((rating, i) => (<span key={i}>{rating}</span>))}
+			{error && <span className={styles.errorMessage}>Поставьте оценку!</span>}
 		</div>
 	)
 }

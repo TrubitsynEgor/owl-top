@@ -1,5 +1,11 @@
 .Rating {
 
+	&.error {
+		& svg {
+			fill: rgb(253, 211, 211);
+		}
+	}
+
 	& .star {
 		padding-right: 5px;
 
@@ -16,6 +22,13 @@
 			outline: none;
 			box-shadow: 0 5px 10px rgba(#7653fc, 0.5);
 		}
+	}
+
+	.errorMessage {
+		display: block;
+		color: var(--red);
+		text-shadow: 0 5px 5px rgba(red, 0.5);
+
 	}
 
 }
