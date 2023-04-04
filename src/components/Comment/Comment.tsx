@@ -17,7 +17,7 @@ const Comment = ({ review, ...props }: CommentProps) => {
 
 	const { name, title, description, createdAt, rating } = review
 	return (
-		<Card color='blue' className={styles.comment} {...props}>
+		<div className={styles.comment} {...props}>
 			<div className={styles.head}>
 
 				<div className={styles.left}>
@@ -36,8 +36,8 @@ const Comment = ({ review, ...props }: CommentProps) => {
 			<P size='small'>{description}</P>
 			<hr className={styles.hr} />
 
-			<CommentForm />
-		</Card>
+
+		</div>
 	)
 }
 

@@ -11,6 +11,7 @@ import { Button } from '../UI/Button/Button'
 import Image from 'next/image'
 import Comment from '../Comment/Comment'
 import cl from 'classnames'
+import CommentForm from '../CommentForm/CommentForm'
 
 
 interface ProductProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -92,12 +93,15 @@ const Product = ({ product }: ProductProps) => {
 				</div>
 
 			</Card>
-			{product.reviews.map(review => (
-				<Comment review={review} key={review._id} className={cl(styles.comment, {
-					[styles.opened]: isCommentOpened,
-					[styles.closed]: !isCommentOpened
-				})} />
+			<Card className={cl(styles.comment, {
+				[styles.opened]: isCommentOpened,
+				[styles.closed]: !isCommentOpened
+			})} color='blue'>{product.reviews.map(review => (
+				<Comment review={review} key={review._id} />
 			))}
+				<CommentForm productId={product._id} />
+			</Card>
+
 
 		</>
 	)
