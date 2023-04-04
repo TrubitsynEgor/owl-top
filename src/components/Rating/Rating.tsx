@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect, useState } from 'react'
+import { ForwardedRef, KeyboardEvent, forwardRef, useEffect, useState } from 'react'
 import cn from 'classnames'
 import styles from './Rating.module.scss'
 import StarIcon from './star.svg'
@@ -12,7 +12,7 @@ interface RatingProps {
 
 }
 
-export const Rating = ({ className, isEditable = false, rating, setRating }: RatingProps) => {
+export const Rating = forwardRef(({ className, isEditable = false, rating, setRating }: RatingProps, ref: ForwardedRef<HTMLDivElement>) => {
 
 	const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>))
 
@@ -63,3 +63,4 @@ export const Rating = ({ className, isEditable = false, rating, setRating }: Rat
 		</div>
 	)
 }
+)
