@@ -1,0 +1,50 @@
+.comment {
+	padding: 30px;
+
+
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+	row-gap: 10px;
+
+	& span {
+		font-size: 14px;
+		line-height: 19px;
+	}
+}
+
+.left {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+
+}
+
+.right {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	@media (max-width: 326px) {
+		gap: 10px;
+	}
+
+}
+
+.hr {
+	margin: 20px 0 30px;
+	border: 1px solid var(--gray-light);
+}
+
+.name {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 24px;
+
+}

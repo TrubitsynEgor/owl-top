@@ -3,7 +3,7 @@ export interface ProductCharacteristic {
 	name: string
 }
 
-export interface reviewModel {
+export interface ReviewModel {
 	_id: string
 	name: string
 	title: string

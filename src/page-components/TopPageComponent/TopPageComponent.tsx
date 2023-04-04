@@ -31,12 +31,13 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
 
 			<div className={styles.title}>
 				<Htag tag='h1'>{page.title}</Htag>
-				{products.length && <Tag color='gray'>{products.length}</Tag>}
+				{products.length && <Tag className={styles.titleTag} color='gray'>{products.length}</Tag>}
 				<Sort sort={sort} setSort={setSort} />
 			</div>
 
-			{sortProducts && sortProducts.map(p => (<Product product={p} key={p._id} />))}
-
+			<div className={styles.products}>
+				{sortProducts && sortProducts.map(p => (<Product product={p} key={p._id} />))}
+			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>
 				<Tag color='red' href='https://hh.ru/'>hh.ru</Tag>

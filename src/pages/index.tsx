@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import axios from 'axios'
 import { MenuItem } from '@/interfaces/menu.interface'
+import CommentForm from '@/components/CommentForm/CommentForm'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -49,6 +50,8 @@ function Home({ menu }: HomeProps) {
         <Rating rating={rating} isEditable={true} setRating={setRating} />
 
         <TextArea placeholder='Текст отзыва' />
+
+        <CommentForm />
 
       </div>
     </>

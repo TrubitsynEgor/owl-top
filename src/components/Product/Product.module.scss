@@ -1,6 +1,12 @@
 .product {
 	padding: 30px;
-	margin-bottom: 51px;
+	margin-top: 35px;
+
+
+	@media (max-width: 640px) {
+		padding: 15px;
+	}
+
 
 	hr {
 		margin: 20px 0;
@@ -10,6 +16,12 @@
 	.actions {
 		display: flex;
 		gap: 20px;
+
+		@media (max-width: 425px) {
+			flex-direction: column;
+			gap: 10px;
+		}
+
 	}
 }
 
@@ -19,6 +31,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media (max-width: 1305px) {
+		flex-direction: column;
+		justify-content: center;
+		row-gap: 20px;
+	}
+
 
 	.right {
 		display: flex;
@@ -31,11 +50,18 @@
 
 		.title {
 			padding-bottom: 10px;
+
+			@media (max-width: 375px) {
+				padding-bottom: 0px;
+
+			}
+
 		}
 
 		.tags {
 			display: flex;
 			flex-wrap: wrap;
+			gap: 5px;
 		}
 	}
 
@@ -46,6 +72,10 @@
 		font-weight: 400;
 		font-size: 20px;
 		line-height: 27px;
+
+		@media (max-width: 860px) {
+			flex-wrap: wrap;
+		}
 
 		.price {
 			display: grid;
@@ -80,6 +110,10 @@
 	grid-template-columns: repeat(2, 1fr);
 	gap: 60px;
 	margin-top: 15px;
+
+	@media (max-width: 1024px) {
+		grid-template-columns: 1fr;
+	}
 
 	.advantagesWrapper {
 
@@ -132,22 +166,53 @@
 	display: grid;
 	grid-template-columns: auto 1fr auto;
 	gap: 10px;
-	align-items: center;
+	align-items: baseline;
 
-	&Name {
+	@media (max-width: 400px) {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+
+	.name {
 		font-weight: 700;
 		font-size: 16px;
 		line-height: 32px;
+
+
 	}
 
-	&Value {
+	.value {
 		font-weight: 500;
 		font-size: 16px;
 		line-height: 22px;
+
+		@media (max-width: 400px) {
+			margin-bottom: 10px;
+
+		}
 	}
 
-	&Dots {
-		margin-top: 10px;
+	.dots {
 		border-bottom: 1px dashed #C4C4C4;
 	}
+}
+
+.opened {
+	height: auto;
+	opacity: 1;
+	visibility: visible;
+	margin-bottom: 10px;
+	padding: 30px;
+}
+
+.closed {
+	padding: 0;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.comment {
+	transition: all .3s ease-in-out;
+
 }

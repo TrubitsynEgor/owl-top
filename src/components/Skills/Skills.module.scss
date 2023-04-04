@@ -5,6 +5,11 @@
 	.title {
 		margin-bottom: 30px;
 
+		@media (max-width: 575px) {
+			margin-bottom: 10px;
+		}
+
+
 	}
 
 	.tags {
