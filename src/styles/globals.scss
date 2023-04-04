@@ -12,12 +12,13 @@
   }
 }
 
-html,
-body {
+html {
   height: 100%;
 }
 
+
 body {
+  height: 100%;
   font-family: 'Noto Sans', sans-serif;
   background: #F5F6F8;
   color: var(--dark);

@@ -198,7 +198,7 @@
 }
 
 .opened {
-	height: auto;
+	max-height: auto;
 	opacity: 1;
 	visibility: visible;
 	margin-bottom: 10px;
@@ -207,7 +207,7 @@
 
 .closed {
 	padding: 0;
-	height: 0;
+	max-height: 0;
 	opacity: 0;
 	visibility: hidden;
 }
