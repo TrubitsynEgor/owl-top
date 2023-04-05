@@ -46,11 +46,11 @@ export const Header = ({ className, ...props }: HeaderProps) => {
 	return (
 		<header className={cn(styles.header, className)} {...props}>
 			<Link href='/'><Logo /></Link>
-			<Button onClick={handleMenu} className={cn(styles.btn, styles.open)} appearance='ghost'><Open /></Button>
+			<Button onClick={handleMenu} className={cn(styles.btn, styles.open)} appearance='ghost' aria-label='Открыть меню'><Open /></Button>
 			{menuIsOpen && <motion.div className={styles.mobileMenu}
 				variants={variants} initial={'closed'} animate={menuIsOpen ? 'opened' : 'closed'}>
 				<Sidebar />
-				<Button onClick={handleMenu} className={cn(styles.btn, styles.close)} appearance='ghost'><Close /></Button>
+				<Button onClick={handleMenu} className={cn(styles.btn, styles.close)} appearance='ghost' aria-label='Закрыть меню'><Close /></Button>
 			</motion.div>}
 		</header>
 	)

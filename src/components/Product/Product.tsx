@@ -64,7 +64,7 @@ const Product = motion(forwardRef(({ product, className, ...props }: ProductProp
 				<div className={styles.head}>
 
 					<div className={styles.right}>
-						<div className={styles.logo}><Image width={70} height={70} className={styles.img} src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} /></div>
+						<div className={styles.logo}><Image aria-hidden width={70} height={70} className={styles.img} src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} /></div>
 						<div className={styles.titleWrap}>
 							<Htag tag='h3' className={styles.title}>{product.title}</Htag>
 							<div className={styles.tags}>{product.categories.map(c => <Tag key={c} size='small' color='ghost'>{c}</Tag>)}</div>

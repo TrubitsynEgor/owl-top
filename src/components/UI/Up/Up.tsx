@@ -18,7 +18,7 @@ export const Up = ({ }: UpProps) => {
 		})
 	}
 	return (
-		<Button appearance='primary' className={styles.up} onClick={scrollTop}>
+		<Button aria-label='Вернуться на верх страницы ' appearance='primary' className={styles.up} onClick={scrollTop}>
 			<GoTopIcon />
 		</Button>
 	)

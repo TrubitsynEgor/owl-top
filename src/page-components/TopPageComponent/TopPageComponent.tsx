@@ -40,7 +40,7 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
 
 			<div className={styles.title}>
 				<Htag tag='h1'>{page.title}</Htag>
-				{products.length && <Tag className={styles.titleTag} color='gray'>{products.length}</Tag>}
+				{products.length && <Tag aria-label='Всего курсов' className={styles.titleTag} color='gray'>{products.length}</Tag>}
 				<Sort sort={sort} setSort={setSort} />
 			</div>
 

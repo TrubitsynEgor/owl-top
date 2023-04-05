@@ -37,9 +37,9 @@ export const Search = ({ className, ...props }: SearchProps) => {
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 				onKeyDown={(e) => goToSearchKeyDown(e)}
-				placeholder='Поиск...' type='search' name='Search' />
+				placeholder='Поиск по сайту...' type='search' name='Search' />
 
-			<Button onClick={goToSearch} appearance='primary' className={styles.btn}>
+			<Button aria-label='Поиск по сайту' onClick={goToSearch} appearance='primary' className={styles.btn}>
 				<SearchIcon />
 			</Button>
 		</div>

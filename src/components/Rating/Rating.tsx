@@ -44,7 +44,7 @@ export const Rating = forwardRef(({ className, isEditable = false, rating, setRa
 					tabIndex={computeFocus(rating, i)}
 					onKeyDown={handleKey}
 					ref={r => ratingArrayRef.current?.push(r)}
-
+					aria-label='Оценить курс'
 				>
 					<StarIcon />
 				</span>

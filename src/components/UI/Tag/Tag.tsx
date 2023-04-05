@@ -1,18 +1,17 @@
-import { ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import cn from 'classnames'
 import styles from './Tag.module.scss'
 import Link from 'next/link'
 
-interface PProps {
+interface PProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	children: ReactNode
-	className?: string
 	size?: 'small' | 'medium'
 	color: 'ghost' | 'red' | 'gray' | 'green' | 'primary'
 	href?: string
 
 }
 
-export const Tag = ({ children, size = 'medium', color = 'ghost', href, className }: PProps) => {
+export const Tag = ({ children, size = 'medium', color = 'ghost', href, className, ...props }: PProps) => {
 	return (
 		<div className={cn(styles.Tag, className, {
 			[styles.small]: size === 'small',
@@ -23,6 +22,7 @@ export const Tag = ({ children, size = 'medium', color = 'ghost', href, classNam
 			[styles.green]: color === 'green',
 			[styles.primary]: color === 'primary',
 		})}
+			{...props}
 		>
 			{
 				href
