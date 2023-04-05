@@ -6,6 +6,7 @@ import Sort, { SortEnum } from '@/components/Sort/Sort'
 import { useEffect, useReducer } from 'react'
 import { sortReducer } from './sort.reducer'
 import Product from '@/components/Product/Product'
+import { useScrollY } from '@/hooks/useScrollY'
 
 
 
@@ -21,6 +22,7 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
 	const [{ products: sortProducts, sort }, dispatch] = useReducer(sortReducer, {
 		products, sort: SortEnum.Rating
 	})
+	const y = useScrollY()
 
 	useEffect(() => {
 		dispatch({ type: 'reset', initialState: products })

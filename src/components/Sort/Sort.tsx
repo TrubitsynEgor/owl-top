@@ -17,7 +17,7 @@ export enum SortEnum {
 const Sort = ({ sort, setSort, className, ...props }: SortProps) => {
 	return (
 		<div className={classNames(styles.sort, className)}  {...props}>
-			<button tabIndex={1} onClick={() => setSort(SortEnum.Rating)}
+			<button onClick={() => setSort(SortEnum.Rating)}
 				className={classNames({
 					[styles.active]: sort === SortEnum.Rating
 				})}

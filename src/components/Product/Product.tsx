@@ -29,6 +29,33 @@ const Product = motion(forwardRef(({ product, className, ...props }: ProductProp
 			behavior: 'smooth',
 			block: 'start'
 		})
+		commentRef.current?.focus()
+	}
+
+	const variants = {
+		visible: {
+			padding: 30,
+			transition: {
+				when: 'beforeChildren',
+				staggerChildren: 0.1
+			}
+		},
+		hidden: {
+			padding: 0,
+		}
+	}
+	const variantsChildren = {
+		visible: {
+
+			height: 'auto',
+			opacity: 1,
+			visibility: 'visible'
+		},
+		hidden: {
+			height: 0,
+			opacity: 0,
+			visibility: 'hidden'
+		}
 	}
 
 	return (
@@ -104,19 +131,23 @@ const Product = motion(forwardRef(({ product, className, ...props }: ProductProp
 				</div>
 
 			</Card>
-			<div ref={commentRef}></div>
-			<Card className={cl(styles.comment, {
-				[styles.opened]: isCommentOpened,
-				[styles.closed]: !isCommentOpened
-			})} color='blue' >
-				{product.reviews.map(review => (
-					<Comment review={review} key={review._id} />
-				))}
-				<CommentForm productId={product._id} />
+
+
+
+			<Card ref={commentRef} tabIndex={isCommentOpened ? 0 : -1} color='blue' className={cl(styles.comment)} layout variants={variants}
+				initial={isCommentOpened ? 'visible' : 'hidden'}
+				animate={isCommentOpened ? 'visible' : 'hidden'}>
+				<motion.div variants={variantsChildren}>
+					{product.reviews.map(review => (
+						<Comment tabIndex={0} review={review} key={review._id} />
+					))}
+					<CommentForm productId={product._id} />
+				</motion.div>
 			</Card>
 
 
-		</div>
+
+		</div >
 	)
 }))
 

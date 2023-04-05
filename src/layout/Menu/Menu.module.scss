@@ -33,7 +33,6 @@
 		margin-bottom: 10px;
 		font-weight: 300;
 		font-size: 12px;
-		line-height: 16px;
 		color: var(--gray-dark);
 		cursor: pointer;
 		text-transform: uppercase;
@@ -48,10 +47,10 @@
 	& .thirdLevel {
 		font-weight: 500;
 		font-size: 14px;
-		line-height: 19px;
 		color: var(--gray-dark);
 		display: block;
 		margin-bottom: 10px;
+		outline-offset: -1px;
 
 		&:hover,
 		&Active {

@@ -9,6 +9,9 @@ interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 	appearance: 'primary' | 'ghost'
 	arrow?: 'right' | 'down' | 'none'
 }
+//TODO Есть 5 свойств у motion.button котороые конфликтуют м TS будет ругатся, фиксим исключением этих свойств из DetailedHTMLProps
+//? Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 
+//? 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag' | 'ref'>
 
 export const Button = forwardRef(({ children, appearance, arrow = 'none', className, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
 	return (

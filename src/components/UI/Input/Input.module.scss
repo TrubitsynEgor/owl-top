@@ -1,6 +1,7 @@
 .inputWrapper {
 	position: relative;
 
+
 	& span {
 		display: block;
 		position: absolute;
@@ -13,6 +14,7 @@
 }
 
 .input {
+
 	border: none;
 	font-family: var(--noto-sans);
 	padding-left: 15px;

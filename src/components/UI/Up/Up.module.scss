@@ -1,0 +1,23 @@
+.up {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	z-index: 150;
+	right: 20px;
+	bottom: 90px;
+	width: 40px;
+	height: 40px;
+
+	@media (max-width: 768px) {
+		position: absolute;
+		bottom: 150px;
+	}
+
+	@media (max-width: 540px) {
+		bottom: 160px;
+	}
+
+
+
+}

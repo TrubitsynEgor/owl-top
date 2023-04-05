@@ -62,6 +62,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			gap: 5px;
+			max-width: 500px;
 		}
 	}
 
@@ -202,22 +203,9 @@
 	}
 }
 
-.opened {
-	max-height: auto;
-	opacity: 1;
-	visibility: visible;
-	margin-bottom: 10px;
-	padding: 30px;
-	position: static;
+.comment {
+	overflow: hidden;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+	background-color: var(--blue-light);
 }
-
-.closed {
-	position: absolute;
-	top: -200px;
-	padding: 0;
-	max-height: 0;
-	opacity: 0;
-	visibility: hidden;
-}
-
-.comment {}

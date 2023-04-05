@@ -33,10 +33,10 @@ export const Search = ({ className, ...props }: SearchProps) => {
 	return (
 		<div className={styles.search} {...props}>
 			<Input
+				className={styles.input}
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 				onKeyDown={(e) => goToSearchKeyDown(e)}
-				style={{ width: '230px', height: '36px' }}
 				placeholder='Поиск...' type='search' name='Search' />
 
 			<Button onClick={goToSearch} appearance='primary' className={styles.btn}>
