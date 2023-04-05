@@ -1,5 +1,5 @@
 import { ProductModel } from '@/interfaces/product.interface'
-import { DetailedHTMLProps, HTMLAttributes, useRef, useState } from 'react'
+import { DetailedHTMLProps, ForwardedRef, HTMLAttributes, forwardRef, useRef, useState } from 'react'
 import { Card } from '../UI/Card/Card'
 import styles from './Product.module.scss'
 import { Htag } from '../UI/Htag/Htag'
@@ -13,13 +13,13 @@ import Comment from '../Comment/Comment'
 import cl from 'classnames'
 import CommentForm from '../CommentForm/CommentForm'
 import Link from 'next/link'
-
+import { motion } from 'framer-motion'
 
 interface ProductProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	product: ProductModel
 }
 
-const Product = ({ product }: ProductProps) => {
+const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>) => {
 
 	const [isCommentOpened, setIsCommentOpened] = useState<boolean>(false)
 	const commentRef = useRef<HTMLDivElement>(null)
@@ -32,7 +32,7 @@ const Product = ({ product }: ProductProps) => {
 	}
 
 	return (
-		<>
+		<div className={className} ref={ref} {...props}>
 			<Card className={styles.product} >
 				<div className={styles.head}>
 
@@ -116,8 +116,8 @@ const Product = ({ product }: ProductProps) => {
 			</Card>
 
 
-		</>
+		</div>
 	)
-}
+}))
 
 export default Product

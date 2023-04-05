@@ -39,14 +39,9 @@
 		text-transform: uppercase;
 
 		&Block {
-			display: none;
+			overflow: hidden;
 		}
 
-		&BlockOpened {
-			display: block;
-			margin-bottom: 20px;
-
-		}
 
 	}
 

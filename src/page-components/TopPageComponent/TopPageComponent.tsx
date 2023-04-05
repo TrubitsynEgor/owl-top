@@ -43,7 +43,7 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
 			</div>
 
 			<div className={styles.products}>
-				{sortProducts && sortProducts.map(p => (<Product product={p} key={p._id} />))}
+				{sortProducts && sortProducts.map(p => (<Product layout product={p} key={p._id} />))}
 			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>
