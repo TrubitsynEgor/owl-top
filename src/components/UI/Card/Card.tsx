@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
+import { DetailedHTMLProps, ForwardedRef, HTMLAttributes, ReactNode, forwardRef } from 'react'
 import cn from 'classnames'
 import styles from './Card.module.scss'
 
@@ -8,12 +8,12 @@ interface CardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HT
 	color?: 'white' | 'blue'
 }
 
-export const Card = ({ color = 'white', children, className, ...props }: CardProps) => {
+export const Card = forwardRef(({ color = 'white', children, className, ...props }: CardProps, ref: ForwardedRef<HTMLDivElement>) => {
 	return (
-		<div {...props} className={cn(styles.card, className, {
+		<div className={cn(styles.card, className, {
 			[styles.blue]: color === 'blue',
-		})}>
+		})} ref={ref} {...props}>
 			{children}
 		</div>
 	)
-}
+})

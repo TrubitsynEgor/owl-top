@@ -16,6 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
 			<Header className={styles.header} />
 
 			<Sidebar className={styles.sidebar} />
+
 			<main className={styles.body}>
 				{children}
 			</main>

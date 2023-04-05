@@ -1,5 +1,5 @@
 import { ProductModel } from '@/interfaces/product.interface'
-import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, useRef, useState } from 'react'
 import { Card } from '../UI/Card/Card'
 import styles from './Product.module.scss'
 import { Htag } from '../UI/Htag/Htag'
@@ -12,6 +12,7 @@ import Image from 'next/image'
 import Comment from '../Comment/Comment'
 import cl from 'classnames'
 import CommentForm from '../CommentForm/CommentForm'
+import Link from 'next/link'
 
 
 interface ProductProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -21,10 +22,18 @@ interface ProductProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>,
 const Product = ({ product }: ProductProps) => {
 
 	const [isCommentOpened, setIsCommentOpened] = useState<boolean>(false)
+	const commentRef = useRef<HTMLDivElement>(null)
+	const scrollToComment = () => {
+		setIsCommentOpened(true)
+		commentRef.current?.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		})
+	}
 
 	return (
 		<>
-			<Card className={styles.product}>
+			<Card className={styles.product} >
 				<div className={styles.head}>
 
 					<div className={styles.right}>
@@ -48,7 +57,9 @@ const Product = ({ product }: ProductProps) => {
 						</div>
 						<div className={styles.rating}>
 							<Rating rating={product.reviewAvg ?? product.initialRating} />
-							<span className={styles.info}>{product.reviewCount} {inflectString(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</span>
+							<span className={styles.info}>
+								<Link href="#ref" onClick={scrollToComment}>	{product.reviewCount} {inflectString(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</Link>
+							</span>
 						</div>
 					</div>
 				</div>
@@ -87,18 +98,20 @@ const Product = ({ product }: ProductProps) => {
 				<div className={styles.actions}>
 					<Button appearance='primary' >Узнать подробнее</Button>
 					<Button onClick={() => setIsCommentOpened(!isCommentOpened)} appearance='ghost'
-						arrow={isCommentOpened ? 'down' : 'right'}>
+						arrow={isCommentOpened ? 'down' : 'right'} >
 						Читать отзывы
 					</Button>
 				</div>
 
 			</Card>
+			<div ref={commentRef}></div>
 			<Card className={cl(styles.comment, {
 				[styles.opened]: isCommentOpened,
 				[styles.closed]: !isCommentOpened
-			})} color='blue'>{product.reviews.map(review => (
-				<Comment review={review} key={review._id} />
-			))}
+			})} color='blue' >
+				{product.reviews.map(review => (
+					<Comment review={review} key={review._id} />
+				))}
 				<CommentForm productId={product._id} />
 			</Card>
 

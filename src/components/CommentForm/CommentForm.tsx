@@ -6,6 +6,8 @@ import { TextArea } from '../UI/TextArea/TextArea'
 import { Button } from '../UI/Button/Button'
 import CloseIcon from './close.svg'
 import { useForm, Controller } from 'react-hook-form'
+import axios from 'axios'
+import { API } from '@/helpers/api'
 
 
 interface CommentFormProps extends DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {
@@ -19,15 +21,30 @@ export interface ICommentForm {
 	rating: number
 }
 
+export interface ICommentSentResponse {
+	message: string
+}
 const CommentForm = ({ productId }: CommentFormProps) => {
 
-	const { register, control, handleSubmit, formState: { errors } } = useForm<ICommentForm>()
+	const { register, control, handleSubmit, formState: { errors }, reset } = useForm<ICommentForm>()
+	const [isSuccess, setIsSuccess] = useState<boolean>(false)
+	const [error, setError] = useState<boolean>(false)
 
+	const onSubmit = async (formData: ICommentForm) => {
+		try {
+			const { data } = await axios.post<ICommentSentResponse>(API.review.createDemo, { ...formData, productId })
+			if (data.message) {
+				setIsSuccess(true)
+				reset()
+			} else {
+				setError(true)
 
-	const onSubmit = (data: ICommentForm) => {
-		console.log(data);
-
+			}
+		} catch (error) {
+			if (error instanceof Error) setError(true)
+		}
 	}
+
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} action="#" className={styles.commentForm}>
@@ -55,11 +72,16 @@ const CommentForm = ({ productId }: CommentFormProps) => {
 				<span className={styles.caption}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
 			</div>
 
-			<div className={styles.success}>
+			{isSuccess && <div className={styles.success}>
 				<div className={styles.successTitle}>Ваш комментарий отправлен!</div>
 				<div className={styles.successCaption}>Спасибо что отправили комментарий, он будет опубликован после проверки</div>
-				<CloseIcon className={styles.successIcon} />
-			</div>
+				<CloseIcon className={styles.successIcon} onClick={() => setIsSuccess(false)} />
+			</div>}
+			{error && <div className={styles.error}>
+				<div className={styles.errorTitle}>Упс! Что то пошло не так, комментарий не отправлен</div>
+				<div className={styles.errorCaption}>Просим прощения за причиненное неудобство, мы исправим это как можно скорее</div>
+				<CloseIcon className={styles.errorIcon} onClick={() => setError(false)} />
+			</div>}
 		</form>
 
 

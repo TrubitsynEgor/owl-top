@@ -101,6 +101,11 @@
 			font-weight: 300;
 			font-size: 14px;
 			line-height: 19px;
+
+			& a {
+				font-weight: 500;
+				color: var(--primary);
+			}
 		}
 	}
 }
@@ -203,16 +208,16 @@
 	visibility: visible;
 	margin-bottom: 10px;
 	padding: 30px;
+	position: static;
 }
 
 .closed {
+	position: absolute;
+	top: -200px;
 	padding: 0;
 	max-height: 0;
 	opacity: 0;
 	visibility: hidden;
 }
 
-.comment {
-	transition: all .3s ease-in-out;
-
-}
+.comment {}

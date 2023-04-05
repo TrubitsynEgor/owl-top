@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, ForwardedRef, ReactNode, forwardRef } from 'react'
 import styles from './Button.module.scss'
 import cn from 'classnames'
 import ArrayIcon from './arrow.svg'
@@ -10,7 +10,7 @@ interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 	arrow?: 'right' | 'down' | 'none'
 }
 
-export const Button = ({ children, appearance, arrow = 'none', className, ...props }: ButtonProps) => {
+export const Button = forwardRef(({ children, appearance, arrow = 'none', className, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
 	return (
 		<button className={cn(styles.button, className, {
 			[styles.primary]: appearance === 'primary',
@@ -19,9 +19,9 @@ export const Button = ({ children, appearance, arrow = 'none', className, ...pro
 			{children}
 			{arrow !== 'none' && <span className={cn(styles.arrow, {
 				[styles.down]: arrow === 'down'
-			})}>
+			})} ref={ref}>
 				<ArrayIcon />
 			</span>}
 		</button>
 	)
-}
+})
