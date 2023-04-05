@@ -1,11 +1,11 @@
-import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
+import { DetailedHTMLProps, FormHTMLAttributes, HTMLAttributes, useState } from 'react'
 import styles from './Search.module.scss'
 import SearchIcon from './search.svg'
 import { Input } from '../UI/Input/Input'
 import { Button } from '../UI/Button/Button'
 import { useRouter } from 'next/router'
 
-interface SearchProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+interface SearchProps extends DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {
 }
 
 export const Search = ({ className, ...props }: SearchProps) => {
@@ -31,7 +31,7 @@ export const Search = ({ className, ...props }: SearchProps) => {
 	}
 
 	return (
-		<div className={styles.search} {...props}>
+		<form className={styles.search} {...props} role='search'>
 			<Input
 				className={styles.input}
 				value={search}
@@ -42,6 +42,6 @@ export const Search = ({ className, ...props }: SearchProps) => {
 			<Button aria-label='Поиск по сайту' onClick={goToSearch} appearance='primary' className={styles.btn}>
 				<SearchIcon />
 			</Button>
-		</div>
+		</form>
 	)
 }

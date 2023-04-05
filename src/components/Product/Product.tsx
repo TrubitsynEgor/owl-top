@@ -73,16 +73,17 @@ const Product = motion(forwardRef(({ product, className, ...props }: ProductProp
 
 					<div className={styles.left}>
 						<div className={styles.price}>
-							{priceRu(product.price)}
-							<Tag className={styles.tag} color='green'>-
+							<span className='visualyHidden'>цена</span>{priceRu(product.price)}
+							<Tag className={styles.tag} color='green'>	<span className='visualyHidden'>скидка</span>-
 								{product.oldPrice && priceRu(product.oldPrice - product.price)}
 							</Tag>
-							<span className={styles.info}>цена</span>
+							<span aria-hidden className={styles.info}>цена</span>
 						</div>
-						<div className={styles.credit}>{priceRu(product.credit)}<span className={styles.suffix}>/мес</span>
-							<span className={styles.info}>в кредит</span>
+						<div className={styles.credit}><span className='visualyHidden'>кредит</span>{priceRu(product.credit)}<span className={styles.suffix}>/мес</span>
+							<span aria-hidden className={styles.info}>в кредит</span>
 						</div>
 						<div className={styles.rating}>
+							<span className='visualyHidden'>{'рейтинг' + product.reviewAvg ?? product.initialRating}</span>
 							<Rating rating={product.reviewAvg ?? product.initialRating} />
 							<span className={styles.info}>
 								<Link href="#ref" onClick={scrollToComment}>	{product.reviewCount} {inflectString(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</Link>

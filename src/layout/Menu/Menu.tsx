@@ -114,8 +114,8 @@ export const Menu = () => {
 	}
 
 	return (
-		<div className={cn(styles.menu)}>
+		<nav className={cn(styles.menu)} role='navigation'>
 			{buildFirstLevel()}
-		</div>
+		</nav>
 	)
 }

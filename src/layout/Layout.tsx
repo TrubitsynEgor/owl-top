@@ -43,7 +43,7 @@ const Layout = ({ children }: LayoutProps) => {
 
 			<Sidebar className={styles.sidebar} />
 
-			<main tabIndex={0} ref={contentRef} className={styles.body}>
+			<main tabIndex={0} ref={contentRef} className={styles.body} role='main'>
 				{children}
 			</main>
 
