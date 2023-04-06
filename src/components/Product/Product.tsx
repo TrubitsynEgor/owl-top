@@ -126,7 +126,7 @@ const Product = motion(forwardRef(({ product, className, ...props }: ProductProp
 				<div className={styles.actions}>
 					<Button appearance='primary' >Узнать подробнее</Button>
 					<Button onClick={() => setIsCommentOpened(!isCommentOpened)} appearance='ghost'
-						arrow={isCommentOpened ? 'down' : 'right'} >
+						arrow={isCommentOpened ? 'down' : 'right'} aria-expanded={isCommentOpened} >
 						Читать отзывы
 					</Button>
 				</div>

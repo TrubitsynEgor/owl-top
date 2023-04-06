@@ -13,7 +13,7 @@ export const TextArea = forwardRef(({ error, className, ...props }: TextAreaProp
 			<textarea ref={ref} id={props.name} className={cn(className, styles.textArea, {
 				[styles.error]: error
 			})} {...props} />
-			{error && <span>{error.message}</span>}
+			{error && <span role='alert'>{error.message}</span>}
 		</div>
 	)
 })

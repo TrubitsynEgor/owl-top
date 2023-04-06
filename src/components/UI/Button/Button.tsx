@@ -6,18 +6,18 @@ import ArrayIcon from './arrow.svg'
 
 interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
 	children: ReactNode
-	appearance: 'primary' | 'ghost'
+	appearance?: 'primary' | 'ghost' | 'none'
 	arrow?: 'right' | 'down' | 'none'
 }
 //TODO Есть 5 свойств у motion.button котороые конфликтуют м TS будет ругатся, фиксим исключением этих свойств из DetailedHTMLProps
 //? Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 
 //? 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag' | 'ref'>
 
-export const Button = forwardRef(({ children, appearance, arrow = 'none', className, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
+export const Button = forwardRef(({ children, appearance = 'none', arrow = 'none', className, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
 	return (
 		<button className={cn(styles.button, className, {
 			[styles.primary]: appearance === 'primary',
-			[styles.ghost]: appearance === 'ghost'
+			[styles.ghost]: appearance === 'ghost',
 		})}  {...props}>
 			{children}
 			{arrow !== 'none' && <span className={cn(styles.arrow, {

@@ -76,11 +76,17 @@
 
 	&Icon {
 		stroke: var(--green);
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		cursor: pointer;
+
 	}
+
+
+}
+
+.closeBtn {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background-color: transparent;
 }
 
 .error {
@@ -100,9 +106,5 @@
 
 	&Icon {
 		stroke: var(--red);
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		cursor: pointer;
 	}
 }

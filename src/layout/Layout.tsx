@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
 	const [displayed, setDisplayed] = useState(false)
 
 	const skipContent = (key: KeyboardEvent) => {
-		if (key.key == 'Enter') {
+		if (key.key == 'Enter' || key.code === 'Space') {
 			key.preventDefault();
 			contentRef.current?.focus()
 			setDisplayed(false)
@@ -31,7 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
 		<div className={styles.wrapper}>
 
 			<Link
-				aria-label='Нажмите Enter'
+				aria-label='Перейти к содержанию'
 				onKeyDown={(e) => skipContent(e)}
 				onFocus={() => setDisplayed(true)}
 				className={cn(styles.skipLink, {

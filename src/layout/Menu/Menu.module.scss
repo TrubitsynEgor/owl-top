@@ -1,4 +1,6 @@
 .menu {
+
+
 	& .firstLevel {
 		margin-top: 20px;
 		display: grid;
@@ -34,8 +36,9 @@
 		font-weight: 300;
 		font-size: 12px;
 		color: var(--gray-dark);
-		cursor: pointer;
 		text-transform: uppercase;
+		background-color: transparent;
+		padding: 0;
 
 		&Block {
 			overflow: hidden;
